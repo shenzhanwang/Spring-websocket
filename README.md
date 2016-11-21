@@ -7,11 +7,17 @@
 
   3.登录的用户可以点击一个在线的其他用户，并给他发送消息，消息先提交给服务器，在通过服务器转发给另一端用户；
   
-  4.支持群发消息的功能，使用时，服务器会将收到的消息群发给当前在线的所有用户。
+  4.支持群发消息的功能，使用时，服务器会将收到的消息群发给当前在线的所有用户;
+  
+  5.添加好友上线提醒和下线提醒的功能，当有好友上线或下线时自动通知所有其他在线人。
   
   效果图：
    ![alt text](https://github.com/shenzhanwang/Spring-websocket/blob/master/%E6%88%AA%E5%9B%BE/1.jpg)
    
    ![alt text](https://github.com/shenzhanwang/Spring-websocket/blob/master/%E6%88%AA%E5%9B%BE/2.jpg)
+   
+    ![alt text](https://github.com/shenzhanwang/Spring-websocket/blob/master/%E6%88%AA%E5%9B%BE/3.jpg)
+   
+   ![alt text](https://github.com/shenzhanwang/Spring-websocket/blob/master/%E6%88%AA%E5%9B%BE/4.jpg)
    
    
