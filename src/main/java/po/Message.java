@@ -1,11 +1,6 @@
 package po;
 
 import java.util.Date;
-/**
- * 消息类
- * @author Goofy
- * @Date 2015年6月12日 下午7:32:39
- */
 public class Message {
 
 	//发送者

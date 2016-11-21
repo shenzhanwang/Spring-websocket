@@ -76,10 +76,24 @@ body{
         //var websocket = new WebSocket('ws://localhost:8080/Spring-websocket/ws');
         websocket.onmessage = function(event) {
        	 var data=JSON.parse(event.data);
+       	 	if(data.from>0||data.from==-1){//用户或者群消息
             // 接收服务端的实时消息并添加到HTML页面中
             $("#log-container").append("<div class='bg-info'><label class='text-danger'>"+data.fromName+"&nbsp;"+data.date+"</label><div class='text-success'>"+data.text+"</div></div><br>");
             // 滚动条滚动到最低部
             scrollToBottom();
+            }else if(data.from==0){//上线消息
+            	if(data.text!="${sessionScope.username}")
+            	{	
+            		$("#users").append('<a href="#" onclick="talk(this)" class="list-group-item">'+data.text+'</a>');
+            		alert(data.text+"上线了");
+            	}
+            }else if(data.from==-2){//下线消息
+            	if(data.text!="${sessionScope.username}")
+            	{	
+            		$("#users > a").remove(":contains('"+data.text+"')");
+            		alert(data.text+"下线了");
+            	}
+            }
         };
         $.post("onlineusers",function(data){
     		for(var i=0;i<data.length;i++)

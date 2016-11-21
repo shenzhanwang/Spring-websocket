@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.concurrent.ConcurrentHashMap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.web.socket.CloseStatus;
 import org.springframework.web.socket.TextMessage;
@@ -17,6 +18,7 @@ import org.springframework.web.socket.WebSocketMessage;
 import org.springframework.web.socket.WebSocketSession;
 
 import po.Message;
+import service.LoginService;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -29,6 +31,9 @@ public class MyWebSocketHandler implements WebSocketHandler {
 	//用于保存HttpSession与WebSocketSession的映射关系
 	public static final Map<Long, WebSocketSession> userSocketSessionMap;
 
+	@Autowired
+	LoginService loginservice;
+	
 	static {
 		userSocketSessionMap = new ConcurrentHashMap<Long, WebSocketSession>();
 	}
@@ -39,8 +44,13 @@ public class MyWebSocketHandler implements WebSocketHandler {
 	public void afterConnectionEstablished(WebSocketSession session)
 			throws Exception {
 		Long uid = (Long) session.getAttributes().get("uid");
+		String username=loginservice.getnamebyid(uid);
 		if (userSocketSessionMap.get(uid) == null) {
 			userSocketSessionMap.put(uid, session);
+			Message msg = new Message();
+			msg.setFrom(0L);//0表示上线消息
+			msg.setText(username);
+			this.broadcast(new TextMessage(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(msg)));
 		}
 	}
 
@@ -70,6 +80,11 @@ public class MyWebSocketHandler implements WebSocketHandler {
 			if (entry.getValue().getId().equals(session.getId())) {
 				userSocketSessionMap.remove(entry.getKey());
 				System.out.println("Socket会话已经移除:用户ID" + entry.getKey());
+				String username=loginservice.getnamebyid(entry.getKey());
+				Message msg = new Message();
+				msg.setFrom(-2L);
+				msg.setText(username);
+				this.broadcast(new TextMessage(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(msg)));
 				break;
 			}
 		}
@@ -87,6 +102,11 @@ public class MyWebSocketHandler implements WebSocketHandler {
 			if (entry.getValue().getId().equals(session.getId())) {
 				userSocketSessionMap.remove(entry.getKey());
 				System.out.println("Socket会话已经移除:用户ID" + entry.getKey());
+				String username=loginservice.getnamebyid(entry.getKey());
+				Message msg = new Message();
+				msg.setFrom(-2L);//下线消息，用-2表示
+				msg.setText(username);
+				this.broadcast(new TextMessage(new GsonBuilder().setDateFormat("yyyy-MM-dd HH:mm:ss").create().toJson(msg)));
 				break;
 			}
 		}
