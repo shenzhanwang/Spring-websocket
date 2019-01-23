@@ -9,18 +9,20 @@
   
   4.支持群发消息的功能，使用时，服务器会将收到的消息群发给当前在线的所有用户;
   
-  5.添加好友上线提醒和下线提醒的功能，当有好友上线或下线时自动通知所有其他在线人。
+  5.添加好友上线提醒和下线提醒的功能，当有好友上线或下线时自动通知所有其他在线人，不要刷新页面可看到实时在线用户列表。
   
   效果图：
-   ![alt text](https://github.com/shenzhanwang/Spring-websocket/blob/master/%E6%88%AA%E5%9B%BE/1.jpg)
+![输入图片说明](https://images.gitee.com/uploads/images/2018/1212/100350_2a6aeccf_1110335.gif "SSM.gif")
+
+![输入图片说明](http://git.oschina.net/uploads/images/2016/1121/155000_fbd7a93b_1110335.jpeg "在这里输入图片标题")
    
-   ![alt text](https://github.com/shenzhanwang/Spring-websocket/blob/master/%E6%88%AA%E5%9B%BE/2.jpg)
-   
-    ![上线提醒](https://github.com/shenzhanwang/Spring-websocket/blob/master/截图/3.jpg) 
-   
-   ![alt text](https://github.com/shenzhanwang/Spring-websocket/blob/master/%E6%88%AA%E5%9B%BE/4.jpg)
-   
- ### 附录：个人作品索引目录（持续更新）
+![输入图片说明](http://git.oschina.net/uploads/images/2016/1121/155008_ad2d6e7a_1110335.jpeg "在这里输入图片标题")
+
+![输入图片说明](http://git.oschina.net/uploads/images/2016/1121/155016_df4cf908_1110335.jpeg "在这里输入图片标题")
+
+![输入图片说明](http://git.oschina.net/uploads/images/2016/1121/155029_5e3afabc_1110335.jpeg "在这里输入图片标题")
+
+### 附录：个人作品索引目录（持续更新）
 
 #### 基础篇:职业化，从做好OA系统开始
 1. [SpringMVC,Mybatis,Spring三大框架的整合实现增删改查](https://gitee.com/shenzhanwang/SSM)
