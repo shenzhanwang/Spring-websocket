@@ -1,6 +1,6 @@
 ##ignore this file##
 /target/ 
-
+/logs/
 .classpath
 .project
 .settings      
