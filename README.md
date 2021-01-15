@@ -77,18 +77,7 @@
 38. 并发控制：使用zookeeper实现分布式锁 
 39. 并发控制：Java多线程编程实例
 40. 并发控制：使用netty实现高性能NIO通信 
-### 视频演示&PPT讲解
-- 第一讲：技术架构演进史和分布式系统
-- 第二讲 分布式服务治理（SOA和微服务）的搭建方法
-- 第三讲：分布式事务的原理和实现（事务消息、TCC、seata）
-- 第四讲：消息队列的使用讲解（activeMQ、rabbitMQ，kafka）
-- 第五讲：分布式锁的三种实现（zookeeper、mysql、redis）
-- 第六讲：elastic search全文检索和大数据分析的实现(ELK平台)
-- 第七讲：分布式缓存redis、文件系统（fastdfs，hdfs）、数据库（mycat，hbase）和负载均衡（nginx）的原理介绍
+### 视频教程
+![输入图片说明](https://images.gitee.com/uploads/images/2021/0115/082443_6e3b60c8_1110335.png "封面.png")
 
-### 购买入口
-<a href="http://www.vmfaka.net/list/UZvwyHjbu" target="_blank">我的网店</a>
-
-<a href="http://www.vmfaka.net/list/fdxxX9PpS0s" target="_blank">全部源码</a>
-
-<a href="http://www.vmfaka.net/list/fdxxWN5jUUs" target="_blank">全部视频和136页PPT</a>
+<a href="https://www.roncoo.com/view/1303618857169457154" target="_blank">在线观看（含源码和PPT）</a>
